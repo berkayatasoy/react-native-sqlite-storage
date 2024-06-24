@@ -45,6 +45,6 @@ dependencies {
         exclude group: "net.zetetic",
         module: 'android-database-sqlcipher'
     }
-    implementation 'net.zetetic:android-database-sqlcipher:4.6.0@aar'
+    implementation 'net.zetetic:sqlcipher-android:4.6.0@aar'
     implementation 'com.facebook.react:react-native:+'
 }
