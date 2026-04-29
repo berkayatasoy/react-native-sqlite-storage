@@ -11,14 +11,13 @@ Pod::Spec.new do |s|
   s.author   = package['author']
   s.source   = { :git => "https://github.com/andpor/react-native-sqlite-storage.git", :tag => "#{s.version}" }
 
-  s.ios.deployment_target = '8.0'
-  s.osx.deployment_target = '10.10'
+  s.ios.deployment_target = '13.4'
+  s.osx.deployment_target = '10.15'
 
   s.preserve_paths = 'README.md', 'LICENSE', 'package.json', 'sqlite.js'
   s.source_files   = "platforms/ios/*.{h,m}"
 
-  s.dependency 'React'
-  # Allow 4.5+ (e.g. 4.10.x) to match consuming apps' Podfile.lock; avoid pinning 4.1.0 exactly.
+  install_modules_dependencies(s)
   s.dependency 'SQLCipher', '~> 4.5'
   s.xcconfig = {
     'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) SQLITE_HAS_CODEC=1',
